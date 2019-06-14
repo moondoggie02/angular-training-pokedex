@@ -8,6 +8,7 @@ import { PDetailComponent } from './p-detail/p-detail.component';
 import { PSearchComponent } from './p-search/p-search.component';
 import { PListResultComponent } from './p-list-result/p-list-result.component';
 import { PListNavigationComponent } from './p-list-navigation/p-list-navigation.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PListNavigationComponent } from './p-list-navigation/p-list-navigation.
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

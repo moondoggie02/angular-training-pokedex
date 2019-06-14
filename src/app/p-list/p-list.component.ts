@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { pokemonInfo } from '../pokemonModel';
 import { PokemonService } from '../pokemon.service';
-import { HttpClient } from '@angular/common/http';
-import { Result, pokemonQuery } from '../pokemonListModel';
+import { Result } from '../pokemonListModel';
 
 @Component({
   selector: 'app-p-list',
@@ -12,13 +10,15 @@ import { Result, pokemonQuery } from '../pokemonListModel';
 })
 export class PListComponent implements OnInit {
   list: Result[];
-  pokemon: pokemonInfo;
+  // pokemon: pokemonInfo;
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
+    /* this.pokemonService.getList()
+    .subscribe(list => this.list = list.results); */
     this.getList();
-    this.getPokemon();
+    // this.getPokemon();
   }
 
   getList(): void {
@@ -26,9 +26,9 @@ export class PListComponent implements OnInit {
     .subscribe(list => this.list = list.results);
   }
 
-  getPokemon(): void {
+  /* getPokemon(): void {
     this.pokemonService.getPokemon()
     .subscribe(pokemon => this.pokemon = pokemon);
-  }
+  } */
 
 }

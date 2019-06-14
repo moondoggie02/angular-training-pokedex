@@ -1,8 +1,7 @@
-<div>
-  <ul>
-    <li *ngFor="let Result of list">
-      <span>{{Result.name}} {{Result.url}}</span>
-    </li>
-  </ul>
-  <app-p-list-result></app-p-list-result>
+<div class="listbody">
+  <!-- <ng-container *ngFor="let result of list"> -->
+    <app-p-list-result class="list" *ngFor="let result of list"
+      [name]="result.name">
+    </app-p-list-result>
+  <!-- </ng-container> -->
 </div>

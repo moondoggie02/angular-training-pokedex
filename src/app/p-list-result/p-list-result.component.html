@@ -1,3 +1,7 @@
-<div>
-  
+<div class="image">
+    <img [src]="pokemon?.sprites.front_default">
+</div>
+<div class="content">
+    <p>{{pokemon?.id}}  {{name | uppercase}}</p>
+    <span *ngFor="let type of list">{{type.type.name | uppercase}}  </span>
 </div>

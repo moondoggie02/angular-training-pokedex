@@ -1,0 +1,13 @@
+.listbody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.list {
+    border: 2px solid black;
+    flex: calc(18%);
+    box-sizing: border-box;
+    margin: 10px 10px;
+}

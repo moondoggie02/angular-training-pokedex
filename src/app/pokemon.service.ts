@@ -10,16 +10,17 @@ import { pokemonQuery } from './pokemonListModel';
 })
 export class PokemonService {
 
-  private url = 'https://pokeapi.co/api/v2/pokemon/';
+  private pokeUrl = 'https://pokeapi.co/api/v2/pokemon';
 
   constructor(
     private http: HttpClient) { }
 
-  getList (): Observable<pokemonQuery> {
-    return this.http.get<pokemonQuery>(this.url);
+  getList(): Observable<pokemonQuery> {
+    return this.http.get<pokemonQuery>(this.pokeUrl);
   }
 
-  getPokemon (): Observable<pokemonInfo> {
-    return this.http.get<pokemonInfo>(this.url + '/1');
+  getPokemon(name: string): Observable<pokemonInfo> {
+    const url = `${this.pokeUrl}/${name}`
+    return this.http.get<pokemonInfo>(url);
   }
 }
