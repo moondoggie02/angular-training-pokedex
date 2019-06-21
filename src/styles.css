@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+p, a, span, li, h4, h1, table{
+color:black;
+text-decoration: none;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.type.grass{
+    background-color: #9bcc50;
+    color:black;
+}
+
+.type.poison{
+    background-color: #b97fc9;
+    color:white;
+}
+
+.type.fire{
+    background-color:#fd7d24;
+    color:white;
+}
+
+.type.water{
+    background-color: #4592c4;
+    color:white;
+}
+
+.type.flying{
+    background-color: #3dc7ef;
+    color:black;
+}
+
+.type.bug{
+    background-color: #729f3f;
+    color:white;
+}
+
+.type.normal{
+    background-color: #a4acaf;
+    color:black;
+}
+
+.type.fighting{
+    background-color: #d56723;
+    color:white;
+}
+
+.type.ground{
+    background-color: #ab9842;
+    color:black;
+}
+
+.type.rock{
+    background-color: #a38c21;
+    color:white;
+}
+
+.type.fairy{
+    background-color: #fdb9e9;
+    color:black;
+}
+
+.type.electric{
+    background-color: #eed535;
+    color:black;
+}
+
+.type.steel{
+    background-color: #9eb7b8;
+    color:black;
+}
+
+.type.ghost{
+    background-color: #7b62a3;
+    color:white;
+}
+
+.type.dark{
+    background-color: #707070;
+    color:white;
+}
+
+.type.dragon{
+    background-color: #f16e57;
+    color:white;
+}
+
+.type.psychic{
+    background-color: #f366b9;
+    color:white;
+}
+
+.type.ice{
+    background-color: #51c4e7;
+    color:black;
+}
+
+.type.shadow{
+    background-color: black;
+    color:white;
+}
+
+.type.unknown{
+    background-color: darkgray;
+    color:black;
+}

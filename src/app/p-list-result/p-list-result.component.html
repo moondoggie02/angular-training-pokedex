@@ -1,7 +1,14 @@
-<div class="image">
-    <img [src]="pokemon?.sprites.front_default">
-</div>
-<div class="content">
-    <p>{{pokemon?.id}}  {{name | uppercase}}</p>
-    <span *ngFor="let type of list">{{type.type.name | uppercase}}  </span>
-</div>
+<ng-container *ngIf="pokemon">
+    <a routerLink="/detail/{{pokemon.id}}">
+        <div class="card">
+            <div class="image">
+                <img [src]="pokemon.sprites.front_default"
+                onError="this.src='assets/images/pokeball.jpg'">
+            </div>
+            <div class="content container">
+                <p>#{{pokemon.id}} <br> {{name | uppercase}}</p>
+                <span class="type {{type.type.name}}" *ngFor="let type of list">{{type.type.name | uppercase}}  </span>
+            </div>
+        </div>
+    </a>
+</ng-container>

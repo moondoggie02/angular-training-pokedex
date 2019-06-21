@@ -1,3 +1,35 @@
-<p>
-  p-detail works!
-</p>
+<div class="detailbody" *ngIf="pokemon">
+  <button (click)="goBack()">go back</button>
+  <div class="contentdiv">
+    <img style="margin-left: 45px" [src]="pokemon.sprites.front_default">
+  </div>
+  <div class="contentdiv">
+    <h4>#{{pokemon.id}} {{pokemon.name | uppercase}}</h4>
+    <p>HEIGHT: {{pokemon.height}}</p>
+    <p>WEIGHT: {{pokemon.weight}}</p>
+  </div>
+  <div class="contentdiv">
+    <span class="type {{type.type.name}}" *ngFor="let type of tList">
+      {{type.type.name | uppercase}} 
+    </span>
+  </div>
+  <div class="contentdiv">
+    <p>ABILITIES</p>
+    <ul>
+      <li *ngFor="let ability of aList">
+        {{ability.ability.name | uppercase}}
+      </li>
+    </ul>
+  </div>
+  <div class="tablediv">
+    <table>
+      <tr *ngFor="let stat of sList">
+        <td>{{stat.stat.name | uppercase}}</td>
+        <td>{{stat.base_stat}}</td>
+      </tr>
+    </table>
+    <!-- <p *ngFor="let stat of sList">
+      <span>{{stat.stat.name | uppercase}}: {{stat.base_stat}}</span>
+    </p> -->
+  </div>
+</div>

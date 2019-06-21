@@ -15,12 +15,23 @@ export class PokemonService {
   constructor(
     private http: HttpClient) { }
 
-  getList(): Observable<pokemonQuery> {
+  getCount(): Observable<pokemonQuery> {
     return this.http.get<pokemonQuery>(this.pokeUrl);
   }
 
-  getPokemon(name: string): Observable<pokemonInfo> {
-    const url = `${this.pokeUrl}/${name}`
+  getList(offset: string): Observable<pokemonQuery> {
+    const url = `${this.pokeUrl}${offset}`;
+    return this.http.get<pokemonQuery>(url);
+  }
+
+  getPokemonByName(name: string): Observable<pokemonInfo> {
+    const url = `${this.pokeUrl}/${name}`;
     return this.http.get<pokemonInfo>(url);
   }
+
+  getPokemonByID(id: number): Observable<pokemonInfo> {
+    const url = `${this.pokeUrl}/${id}`;
+    return this.http.get<pokemonInfo>(url);
+  }
+  
 }

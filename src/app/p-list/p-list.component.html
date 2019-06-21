@@ -1,7 +1,14 @@
+<div>
+  <nav>
+    <a *ngFor="let page of pages; let i = index"
+      (click)="getPage()"
+      routerLink="/page/{{i+1}}">
+      {{i+1}}
+    </a>
+  </nav>
+</div>
 <div class="listbody">
-  <!-- <ng-container *ngFor="let result of list"> -->
-    <app-p-list-result class="list" *ngFor="let result of list"
-      [name]="result.name">
-    </app-p-list-result>
-  <!-- </ng-container> -->
+  <app-p-list-result class="list" *ngFor="let result of list"
+    [name]="result.name">
+  </app-p-list-result>
 </div>

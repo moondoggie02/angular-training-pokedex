@@ -20,11 +20,11 @@ export class PListResultComponent implements OnInit {
   }
 
   getPokemon(): void {
-    this.pokemonService.getPokemon(this.name)
+    this.pokemonService.getPokemonByName(this.name)
     .subscribe(pokemon => {
       this.pokemon = pokemon;
       this.list = pokemon.types;
-      // console.log(this.pokemon.sprites.front_default);
+      this.list.reverse();
     })
   }
 
