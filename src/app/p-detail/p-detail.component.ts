@@ -28,8 +28,8 @@ export class PDetailComponent implements OnInit {
   }
 
   getPokemon(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.pokemonService.getPokemonByID(id)
+    const detail = this.route.snapshot.paramMap.get('detail');
+    this.pokemonService.getPokemon(detail)
       .subscribe(pokemon => {
         this.pokemon = pokemon;
         this.tList = pokemon.types;

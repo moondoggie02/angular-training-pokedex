@@ -5,9 +5,10 @@ import { PDetailComponent } from './p-detail/p-detail.component';
 import { PListComponent } from './p-list/p-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/page/1', pathMatch: 'full'},
-  { path: 'page/:pageNumber', component: PListComponent},
-  { path: 'detail/:id', component: PDetailComponent}
+  { path: '', redirectTo: '/page/1', pathMatch: 'full' },
+  { path: 'page/:pageNumber', component: PListComponent },
+  { path: 'detail/:detail', component: PDetailComponent },
+  { path: '**', redirectTo: 'page/1' }
 ];
 
 @NgModule({

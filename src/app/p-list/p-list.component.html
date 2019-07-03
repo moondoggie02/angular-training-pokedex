@@ -1,7 +1,7 @@
 <div>
   <nav>
     <a *ngFor="let page of pages; let i = index"
-      (click)="getPage()"
+      (click)="getList(i+1)"
       routerLink="/page/{{i+1}}">
       {{i+1}}
     </a>

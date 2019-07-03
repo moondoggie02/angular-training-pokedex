@@ -24,7 +24,12 @@ export class PokemonService {
     return this.http.get<pokemonQuery>(url);
   }
 
-  getPokemonByName(name: string): Observable<pokemonInfo> {
+  getPokemon(detail: string): Observable<pokemonInfo> {
+    const url = `${this.pokeUrl}/${detail}`;
+    return this.http.get<pokemonInfo>(url);
+  }
+
+  /* getPokemonByName(name: string): Observable<pokemonInfo> {
     const url = `${this.pokeUrl}/${name}`;
     return this.http.get<pokemonInfo>(url);
   }
@@ -32,6 +37,6 @@ export class PokemonService {
   getPokemonByID(id: number): Observable<pokemonInfo> {
     const url = `${this.pokeUrl}/${id}`;
     return this.http.get<pokemonInfo>(url);
-  }
+  } */
   
 }

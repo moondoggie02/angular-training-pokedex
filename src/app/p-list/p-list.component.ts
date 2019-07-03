@@ -14,9 +14,9 @@ export class PListComponent implements OnInit {
   query: pokemonQuery;
   count: number;
   pages: number[];
-  offsetNumber: number = 0;
   offset: string = "?limit=20&offset=";
   list: Result[];
+  page = +this.route.snapshot.paramMap.get('pageNumber');
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class PListComponent implements OnInit {
 
   ngOnInit() {
     this.getCount();
-    this.getList(1);
+    this.getList(this.page);
   }
 
   getCount(): void {
@@ -33,25 +33,14 @@ export class PListComponent implements OnInit {
       this.query = query;
       this.count = query.count;
       this.pages = Array(Math.ceil(this.count / 20));
-      // console.log(this.pages);
-      // this.offset = '?limit=20&offset=' + this.offsetNumber;
     });
   }
 
-  getPage(): void {
-    const page = +this.route.snapshot.paramMap.get('pageNumber');
-    this.getList(page);
-  }
-
   getList(p: number): void {
-    // const page = +this.route.snapshot.paramMap.get('pageNumber');
     this.pokemonService.getList(this.offset + ((p-1)*20))
     .subscribe(list => {
-      this.list = [];
       this.list = list.results;
-      console.log("1 " + this.offsetNumber);
-      console.log("1 " + this.offset);
-      console.log("name - " +  this.list[19].name);
+      console.log("name - " +  this.list[0].name);
     });
   }
 
